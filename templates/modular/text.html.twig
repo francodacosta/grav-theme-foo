@@ -1,0 +1,26 @@
+{% block text%}
+<div class="text">
+    {% if page.header.show_title is defined and page.header.show_title == true %}
+        {% if loop.index > 1 %}
+            <h2 class="mb-3 mt-5">{{page.title}}</h2>
+        {% else %}
+            <h1 class="mb-3 mt-5">{{page.title}}</h1>
+        {% endif %}
+    {% endif %}
+
+    {% if page.header.show_content is defined and page.header.show_content == true %}
+        {{ page.content|markdown|raw }}
+    {% endif %}
+
+    {% block content_bottom %}{% endblock content_bottom %}
+
+
+    {% if page.header.show_cta and (is_extended is not defined) %}
+        <div class="row">
+            <div class="col-12 mt-3 d-flex justify-content-center">
+                <a class="btn-accent" href="{{ page.header.cta_url}}">{{ page.header.cta }}</a>
+            </div>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

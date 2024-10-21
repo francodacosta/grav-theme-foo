@@ -1,0 +1,10 @@
+{% extends 'default.html.twig' %}
+
+{% block content_bottom %}
+    <div class="row mt-5">
+        {% for p in page.header.media_order|split(',') %}
+            {% set img = page.media.images[p] %}
+            {% include 'partials/blocks/photo-grid.html.twig' %}
+        {% endfor %}
+    </div>
+{% endblock %}

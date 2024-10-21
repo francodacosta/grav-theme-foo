@@ -1,0 +1,19 @@
+textarea,
+.form-select,
+input {
+    width: 100%;
+    border: 1px solid var(--accent-color);
+    background-color: transparent;
+    color: var(--accent-color);
+    height: 2rem;
+}
+
+label {
+    margin-top: 1rem;
+    margin-bottom: 0;
+}
+
+.form-label {
+    margin-bottom: .3rem;
+
+}

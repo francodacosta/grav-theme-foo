@@ -1,0 +1,38 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block css %}
+    {{ parent() }}
+{% endblock %}
+
+{% block content %}
+
+    {% if page.header.show_title is defined and page.header.show_title == true %}
+        {% if loop.index > 1 %}
+            <h2>{{page.title}}</h2>
+        {% else %}
+            <h1>{{page.title}}</h1>
+        {% endif %}
+    {% endif %}
+    {% if page.header.show_content is defined and page.header.show_content == true %}
+        {{ page.content|raw }}
+    {% endif %}
+
+    {% block content_bottom %}
+        {% for module in page.collection().published() %}
+            <a id="{{ module.slug }}"></a>
+            <article id="{{ module.slug }}_container" class="my-5">
+                {% if module.header.show_title %}
+                    <h2>{{module.title}}</h2>
+                {% endif %}
+                {% if module.header.show_content is defined and module.header.show_content == true %}
+                    {{ module.content|raw }}
+                {% endif %}
+            </article>
+        {% endfor %}
+    {% endblock content_bottom %}
+{% endblock %}
+
+
+{% block bottom_js %}
+    {{ parent() }}
+{% endblock bottom_js %}

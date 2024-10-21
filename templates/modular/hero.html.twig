@@ -1,0 +1,32 @@
+
+{% set is_extended = true %}
+{% extends 'modular/text.html.twig' %}
+
+{% block content_bottom %}
+
+    {% set img = page.media[page.header.image].url%}
+    <div class="">
+        <div class="hero my-5 d-block d-lg-none ">
+            <img class="box accent w-100 mb-3" src="{{ img }}"/>
+            <div class=" w-100 text-center">
+                <h1>{{ page.header.title|raw }}</h1>
+                <h2>{{ page.header.description|markdown|raw }}</h2>
+                {% if page.header.show_cta %}
+                    <a class="btn-accent mt-3 " href="{{ page.header.cta_url}}">{{ page.header.cta }}</a>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="hero my-5 justify-content-center align-items-center d-lg-flex d-none">
+            <div class="message " style="position: absolute;">
+                <h1>{{ page.header.title|raw }}</h1>
+                <h2>{{ page.header.description|markdown|raw }}</h2>
+
+                {% if page.header.show_cta %}
+                    <a class="btn-accent" href="{{ page.header.cta_url}}">{{ page.header.cta }}</a>
+                {% endif %}
+            </div>
+            <img class="box accent w-100" src="{{ img }}"/>
+        </div>
+    </div>
+{% endblock %}

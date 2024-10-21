@@ -1,0 +1,68 @@
+name: Foo
+slug: foo
+type: theme
+version: 0.1.0
+description: photography centric theme
+icon: rebel
+author:
+  name: nuno costa
+  email: info@codehaha.com
+homepage: https://github.com/francodacosta/grav-theme-foo
+demo: https://www.maternity-photos.com
+keywords: grav, theme, elegant
+bugs: https://github.com/francodacosta/grav-theme-foo/issues
+readme: https://github.com/francodacosta/grav-theme-foo/blob/develop/README.md
+license: MIT
+
+dependencies:
+  - { name: grav, version: ">=1.7.1" }
+
+form:
+  validation: loose
+  fields:
+    logo_light:
+      help: The website logo for dark based themes
+      type: file
+      destination: "theme://images"
+      multiple: false
+      accept:
+        - .png
+        - .jpg
+        - .svg
+      label: Logo Dark Bg
+    logo_dark:
+      help: The website logo for light based themes
+      type: file
+      destination: "theme://images"
+      multiple: false
+      accept:
+        - .png
+        - .jpg
+        - .svg
+      label: Logo Light Bg
+    social_links:
+      type: list
+      style: vertical
+      label: Social Links
+      fields:
+        .icon:
+          type: text
+          label: Icon
+        .url:
+          type: text
+          label: URL
+    site_theme:
+      type: select
+      size: long
+      classes: fancy
+      label: Site Theme
+      help: "choose the theme that applies to the wesite"
+      options:
+        gold: "Dark / Gold theme"
+        clean: "Clean black and white theme"
+        sensual: "Dark background and sexy pink"
+        elegant: "Dark and Pastel blue"
+    site_trackers:
+      type: textarea
+      label: Trackers
+      help: Add tracking code like Google tags or facebook pixel

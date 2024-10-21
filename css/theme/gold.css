@@ -1,0 +1,23 @@
+:root {
+    --accent-font: "Bitter", serif;
+
+    --handwrite-font: "Sacramento", cursive;
+
+    --font: "Exo 2", sans-serif;
+
+    --base-font-size: 15px;
+
+    --font-color: #E9E0E7;
+
+    --accent-color: #D1C7AD;
+
+    --accent-color-alt: #111111;
+
+    --hero-title-size: 5rem;
+
+    --bg: #111111;
+
+    --header-bg: var(--bg);
+
+    --hero_font_weight: 300;
+}

@@ -1,0 +1,32 @@
+title: Page Settings
+"@extends": modular/text
+
+form:
+  fields:
+    tabs:
+      fields:
+        cta:
+          unset@: true
+        reviews:
+          type: tab
+          title: Reviews
+          ordering@: content
+          fields:
+            header.reviews:
+              type: list
+              label: Reviews
+              style: vertical
+              collapsed: true
+              fields:
+                .name:
+                  type: text
+                  label: name
+                .text:
+                  label: text
+                  type: editor
+                .image:
+                  type: pagemediaselect
+                  label: Image
+                .source:
+                  type: text
+                  label: source

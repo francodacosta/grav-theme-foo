@@ -1,0 +1,6 @@
+
+/node_modules
+.DS_Store
+/images/*.png
+/images/*.jpg
+/images/*.jpeg

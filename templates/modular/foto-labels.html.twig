@@ -1,0 +1,26 @@
+{% if page.header.show_title %}
+    <h2>
+         {{ page.title }}
+    </h2>
+{% endif %}
+<div class="row">
+    {% for i in page.header.images %}
+        <div class="col-12 col-md-6 col-lg foto-label mt-4">
+            {% if i.link %}
+                <a href="{{ url(i.link) }}">
+                {% endif %}
+                <div class="header-aux {{ i.style }}">
+                    <p class="secondary">
+                        {{ i.secondary }}
+                    </p>
+                    <p class="main">
+                        {{ i.text }}
+                    </p>
+                </div>
+                <img src="{{ page.media[i.image].url }}" alt="{{ i.text }} {{ i.secondary }}">
+                {% if i.link %}
+                </a>
+            {% endif %}
+        </div>
+    {% endfor %}
+</div>

@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Sacramento&display=swap');
+/*
+:root
+            {
+                --accent-font: {{theme.css.accent_font|raw}}
+                ;
+                --handwrite-font: {{theme.css.handwrite_font|raw}}
+                ;
+                --font: {{theme.css.accent_font|raw}}
+                ;
+                --base-font-size: {{theme.css.base_font_size|raw}}
+                ;
+                --font-color: {{theme.css.font_color|raw}}
+                ;
+                --accent-color: {{theme.css.accent_color|raw}}
+                ;
+                --accent-color-alt: {{theme.css.accent_color_alt|raw}}
+                ;
+                --hero-title-size: {{theme.css.hero_title_size|raw}}
+                ;
+                --bg: {{theme.css.background_color|raw}}
+                ;
+                --header-bg: {{theme.css.header_bg_color|raw}}
+                ;
+            }
+*/
+
+@import 'components/layout';
+@import 'components/navbar';
+@import 'components/notices';
+@import 'components/forms';
+@import 'modular/text.scss';
+@import 'modular/foto-label';
+@import 'modular/review';
+@import 'modular/hero';

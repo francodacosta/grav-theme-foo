@@ -1,0 +1,20 @@
+title: Page Settings
+"@extends": default
+
+form:
+  fields:
+    tabs:
+      fields:
+        pageSettings:
+          type: tab
+          title: Page Settings
+
+          fields:
+            header.show_content:
+              unset@: true
+            header.show_header:
+              unset@: true
+            header.show_footer:
+              unset@: true
+            header.site_theme:
+              unset@: true

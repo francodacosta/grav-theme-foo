@@ -1,0 +1,11 @@
+{% extends 'default.html.twig' %}
+
+{% block content_bottom %}
+
+    {% for module in page.collection().published() %}
+        <a id="{{ module.slug }}"></a>
+        <article id="{{ module.slug }}_container" class="my-5">
+            {{ module.content|raw }}
+        </article>
+    {% endfor %}
+{% endblock content_bottom %}

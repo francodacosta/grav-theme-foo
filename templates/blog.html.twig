@@ -1,0 +1,19 @@
+{% extends 'default.html.twig' %}
+
+{% block content_bottom %}
+    <div class="container-fluid my-5">
+        {% for p in page.collection().published() %}
+            <div class="row my-5 box accent  rounded">
+                {% set img = p.media.images|first %}
+                <div class="col-lg-4 col-12 h-100  d-lg-block p-0">
+                    <img src="{{ img.url}}" class="w-100 h-100 "  --style="background-position: center; background-size: cover; background-image: url( {{ img.url}})">
+                </div>
+                <div class="col-12 col-lg-8 h-100 mt-3 pb-3">
+                    <h2>{{ p.title}}</h2>
+                    {{ p.summary|regex_replace('/<img.*?>/','')|raw }}
+                    <a href="{{ p.url }}" class="btn-accent mt-2 d-block text-center d-lg-inline-block">Read more...</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

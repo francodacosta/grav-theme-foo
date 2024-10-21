@@ -1,0 +1,41 @@
+{% extends 'modular/text.html.twig' %}
+
+{% block content_bottom %}
+    <div id="carouselExampleIndicators" class="carousel slide my-5" data-ride="carousel">
+        <ol class="carousel-indicators my-5">
+            {% for r in page.header.reviews %}
+                <li data-target="#carouselExampleIndicators" data-slide-to="{{loop.index0}}" class="{% if loop.first %}active{% endif %}"></li>
+            {% endfor %}
+        </ol>
+        <div class="carousel-inner h-100">
+            {% for r in page.header.reviews %}
+
+                <div class="review p-4 carousel-item {% if loop.first %}active{% endif %}">
+                    <div class="row">
+                        <div class="col-12 col-lg-1">
+                            <center>
+                                <i class="quote fa-solid fa-quote-left"></i>
+                            </center>
+                        </div>
+                        <div class="col-11 col-lg-11">
+
+                            <div class="text mt-2">
+
+                                {{r.text|markdown|raw}}
+                            </div>
+
+                            <div class="name d-flex ">
+                                <span class="handwrite">{{ r.name }}</span>
+
+                            </div>
+                            <div class="source">
+                                via
+                                {{ r.source}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,8 @@
+{% if img.width > img.height %}
+    {% set cols = 'col-' ~ min(page.header.columns.mobile * 2, 12) ~ ' col-md-'  ~ min(page.header.columns.tablet * 2, 12) ~ ' col-lg-' ~ min(page.header.columns.desktop * 2, 12)%}
+{% else %}
+    {% set cols = 'col-' ~ page.header.columns.mobile ~ ' col-md-'  ~ page.header.columns.tablet ~ ' col-lg-' ~ page.header.columns.desktop %}
+{% endif %}
+<div class="mb-3 {{cols}}  d-flex align-items-stretch ">
+    <img class="w-100 box accent" src="{{ img.url }}" alt="{{ page.metadata.description.content|default(site.title) }}" style="object-fit: cover;">
+</div>

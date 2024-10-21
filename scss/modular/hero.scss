@@ -1,0 +1,55 @@
+.hero {
+    .btn-accent {
+        display: inline-block;
+        right: 0;
+        position: absolute;
+    }
+
+    img {
+        height: 60vh;
+        object-fit: cover;
+        background-position: center center;
+    }
+
+    h1 {
+        color: var(--accent-color);
+        font-family: var(--accent-font);
+        font-optical-sizing: auto;
+        font-weight: var(--hero_font_weight);
+        font-style: normal;
+        font-size: var(--hero-title-size);
+        margin: 0 !important;
+    }
+
+    &.d-lg-none {
+        h1 {
+            font-size: calc(var(--hero-title-size)/ 3);
+        }
+
+        h2 {
+            font-size: calc(var(--hero-title-size)/ 5);
+        }
+
+        .btn-accent {
+            margin: auto;
+            position: relative;
+        }
+    }
+
+    h2 {
+        color: var(--accent-color);
+        text-transform: uppercase;
+        font-size: calc(var(--hero-title-size) * 0.34);
+        margin: 0 !important;
+    }
+
+}
+
+
+@media (max-width:768px) {
+    .hero {
+        img {
+            height: 25vh;
+        }
+    }
+}

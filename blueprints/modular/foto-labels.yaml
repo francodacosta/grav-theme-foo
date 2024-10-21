@@ -1,0 +1,40 @@
+title: Photo Labels
+extends@: modular/default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+            content:
+              unset@: true
+        buttons:
+          type: tab
+          title: Photo Labels
+          ordering@: content
+          fields:
+            section_images:
+              type: section
+              title: Photo Labels
+              underline: true
+              fields:
+                header.images:
+                  name: Images
+                  type: list
+                  style: vertical
+                  collapsed: true
+                  fields:
+                    .text:
+                      type: text
+                      label: Main Text
+                    .secondary:
+                      type: text
+                      label: Secondary Text
+                    .link:
+                      type: text
+                      label: Link
+                    .image:
+                      type: filepicker
+                      label: Image
+                      preview_images: true

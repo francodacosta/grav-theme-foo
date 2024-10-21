@@ -1,0 +1,11 @@
+.notices.green {
+    border-left: 20px solid var(--accent-color) !important;
+    background-color: #dadada !important;
+
+    p {
+        color: var(--accent-color-alt) !important;
+        font-weight: 300;
+        font-size: 1.2rem;
+        padding-top: .5rem;
+    }
+}

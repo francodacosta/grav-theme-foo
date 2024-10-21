@@ -1,0 +1,31 @@
+<footer>
+    <div class="container">
+        <div class="row d-lg-none">
+
+            <div class="col-12 d-flex justify-content-center mb-3">
+                {% for l in theme.social_links %}
+                    <a class="round accent" href="{{ l.url }}">{{ l.icon|raw }}</a>
+                {% endfor %}
+            </div>
+            <div class="col-12 d-flex justify-content-center">
+                &copy;
+                {{ '2018 - ' ~"now"|date('Y') }}
+                all rights reserved.
+            </div>
+        </div>
+
+        <div class="row d-none d-lg-flex justify-content-end mt-5">
+
+            <div class="col-4 d-lg-flex justify-content-start">
+                &copy;
+                {{ '2018 - ' ~ "now"|date('Y') }}
+                all rights reserved.
+            </div>
+            <div class="col-8 d-lg-flex justify-content-end">
+                {% for l in theme.social_links %}
+                    <a class="round accent" href="{{ l.url }}">{{ l.icon|raw }}</a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</footer>

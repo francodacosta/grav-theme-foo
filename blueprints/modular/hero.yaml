@@ -1,0 +1,45 @@
+title: Page Settings
+"@extends": modular/default
+context: blueprints://pages
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          type: tab
+          fields:
+            content:
+              unset@: true
+            header.title:
+              type: text
+              label: Title
+            header.description:
+              type: editor
+              label: Description
+            header.image:
+              type: filepicker
+              preview_images: true
+              label: Hero Image
+              accept: image/*
+            header.media_order:
+              ordering@: header.image
+        cta:
+          type: tab
+          title: CTA
+          ordering@: content
+          fields:
+                header.show_cta:
+                  type: toggle
+                  label: Show CTA
+                  highlight: 1
+                  default: 1
+                  options:
+                    1: PLUGIN_ADMIN.ENABLED
+                    0: PLUGIN_ADMIN.DISABLED
+                header.cta:
+                  type: text
+                  label: CTA
+                header.cta_url:
+                  type: text
+                  label: CTA LINK

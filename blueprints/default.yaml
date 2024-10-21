@@ -1,0 +1,60 @@
+title: Page Settings
+"@extends": default
+
+form:
+  fields:
+    tabs:
+      fields:
+        pageSettings:
+          type: tab
+          title: Page Settings
+
+          fields:
+            header.show_title:
+              type: toggle
+              label: Show Page Title
+              help: If page title should be displayed
+              highlight: 1
+              default: 1
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+            header.show_content:
+              type: toggle
+              label: Show Page Content
+              help: If page content should be displayed
+              highlight: 1
+              default: 1
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+            header.show_header:
+              type: toggle
+              label: Show Header
+              help: If site header should be displayed
+              highlight: 1
+              default: 1
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+            header.show_footer:
+              type: toggle
+              label: Show Footer
+              help: If site footer should be displayed
+              highlight: 1
+              default: 1
+              options:
+                1: PLUGIN_ADMIN.ENABLED
+                0: PLUGIN_ADMIN.DISABLED
+            header.site_theme:
+              type: select
+              size: long
+              classes: fancy
+              label: Page Theme
+              help: "choose the theme that applies to this page"
+              options:
+                default: "Use default theme"
+                gold: "Dark / Gold theme"
+                clean: "Clean black and white theme"
+                sensual: "Dark background and sexy pink"
+                elegant: "Dark and Pastel blue"

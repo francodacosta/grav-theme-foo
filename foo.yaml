@@ -1,0 +1,20 @@
+enabled: true
+css:
+  accent_font: '"Bitter", serif'
+  handwrite_font: '"Sacramento", cursive'
+  font: '"Exo 2", sans-serif'
+  base_font_size: 15px;
+  font_color: "#E9E0E7"
+  background_color: "#111111"
+  accent_color: "#D1C7AD"
+  accent_color_alt: "#111111"
+  hero_title_size: 5rem;
+config:
+  gold:
+    body_class: dark
+  sensual:
+    body_class: dark
+  clean:
+    body_class: light
+  elegant:
+    body_class: dark
