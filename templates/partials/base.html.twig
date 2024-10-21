@@ -6,11 +6,12 @@
             {% set site_theme = page.header.site_theme %}
         {% endif %}
 
-
         {% block head %}
             <meta charset="utf-8"/>
             <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
             <meta name="viewport" content="width=device-width, initial-scale=1"/>
+            <link rel="icon" type="image/png" href="{{ url('theme://images/favicon.png', true) }}"/>
+
             {% include 'partials/metadata.html.twig' %}
             <title>
                 {% if header.title %}
@@ -18,23 +19,14 @@
                     |
                 {% endif %}
                 {{ site.title|e('html') }}</title>
-            <link rel="icon" type="image/png" href="{{ url('theme://images/favicon.png', true) }}"/>
 
             {% block stylesheets %}
                 {% do assets.add('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css',{'priority': 99, 'media': 'all'}) %}
                 {% do assets.add('https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css',{'priority': 98, 'media': 'all'}) %}
 
-
                 {% do assets.add('theme://css/theme/' ~ site_theme ~ '.css',{'priority': 98, 'media': 'all'}) %}
                 {% do assets.add('theme://css/foo.min.css',{'priority': 98, 'media': 'all'}) %}
             {% endblock %}
-
-
-            <style>
-                body {
-                    background-image: url('{{ url("theme://images/" ~(theme.image_desktop|first).name) }}') !important;
-                }
-            </style>
 
             {% block javascripts %}
                 {% do assets.add('https://code.jquery.com/jquery-3.2.1.slim.min.js', {'priority': 101, 'loading': 'async defer'}) %}
@@ -53,7 +45,7 @@
                 {{ assets.js('head', {'loading': 'async defer'})|raw }}
             {% endblock %}
 
-        {% endblock head%}
+        {% endblock head %}
 
         {% block trackers %}
             {% if theme.site_trackers %}
@@ -70,21 +62,23 @@
                 {% include 'partials/page_header.html.twig' %}
             {% endif %}
         {% endblock %}
-        {% if config.plugins.langswitcher.enabled  %}
 
+        {% if config.plugins.langswitcher.enabled  %}
             {% include 'partials/langswitcher.html.twig' %}
         {% endif %}
-        <div class="container"> {% block content %}{% endblock content %}
-            </div>
-            {% block page_footer %}
-                {% if page.header.show_footer is defined and page.header.show_footer == true %}
-                    {% include 'partials/page_footer.html.twig' %}
-                {% endif %}
-            {% endblock %}
 
-            {% block bottom_js %}
-                {{ assets.js('bottom')|raw }}
-            {% endblock %}
-        </body>
-    </html>
-</div></body></html></body></html>
+        <div class="container">
+            {% block content %}{% endblock content %}
+        </div>
+
+        {% block page_footer %}
+            {% if page.header.show_footer is defined and page.header.show_footer == true %}
+                {% include 'partials/page_footer.html.twig' %}
+            {% endif %}
+        {% endblock %}
+
+        {% block bottom_js %}
+            {{ assets.js('bottom')|raw }}
+        {% endblock %}
+    </body>
+</html>
