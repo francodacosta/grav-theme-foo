@@ -1,14 +1,14 @@
 name: Foo
 slug: foo
 type: theme
-version: 0.1.0
+version: 0.1.1
 description: photography centric theme
 icon: rebel
 author:
   name: nuno costa
   email: info@codehaha.com
 homepage: https://github.com/francodacosta/grav-theme-foo
-demo: https://www.maternity-photos.com
+demo: https://www.francodacosta.com
 keywords: grav, theme, elegant
 bugs: https://github.com/francodacosta/grav-theme-foo/issues
 readme: https://github.com/francodacosta/grav-theme-foo/blob/develop/README.md
